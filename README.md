@@ -1,15 +1,14 @@
 <img src="https://cloud.githubusercontent.com/assets/2734652/12749978/4abeb23e-c9b4-11e5-95a2-e02a5a274ec2.png" width="100" height="100"/>
-# skolrank
-Skolrank - Sverige
+# Skolrank - Sverige
 
-Lists and sort swedish schools according different characteristics.
+An android app that lists and sorts swedish schools according different characteristics.
 The app is free and can be downloaded from <a href="https://play.google.com/store/apps/details?id=se.subsurface.schoolrankswe">google play<a/>
 
 # Used Licenses
 Skolrank - Sverige uses the following sources (also mentioned inside the app)
 - database created from skolverkets public data: http://siris.skolverket.se/siris/f?p=Siris:1:0
 
-- Heraldic shields from wikipedia/wikimedia https://sv.wikipedia.org/wiki/Kommunvapen_i_Sverige
+- Municipal heraldic shields from wikipedia/wikimedia https://sv.wikipedia.org/wiki/Kommunvapen_i_Sverige
 
 # Screenshot
 <img src="https://cloud.githubusercontent.com/assets/2734652/12749895/bba2542a-c9b3-11e5-919b-dcf2673ad08b.png" width="200">
