@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_dark_alpha"
+    tools:ignore="Overdraw">
+
+    <TextView
+        android:id="@+id/sort_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        tools:text="Sorterar på"
+        style="@style/status_bar_text"
+        />
+
+    <TextView
+
+        android:id="@+id/sort_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sort_label"
+        android:paddingRight="4dp"
+        android:paddingLeft="4dp"
+        style="@style/status_bar_text"
+
+        tools:text="Andel Högutbildade" />
+</RelativeLayout>

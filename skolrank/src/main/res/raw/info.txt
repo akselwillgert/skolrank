@@ -1,0 +1,9 @@
+<h3>Ranking för svenska grund- och gymnasieskolor</h3>
+Version 0.0.23<br>
+Publicerad 2015-2016<br>
+<br>
+Sök och sortera bland svenska skolor.<br>
+Datat är från läsåren HT06/07 till och med HT14/VT15. Senaste är förvalt<br>
+<br>
+Appen är skriven av Aksel Willgert<br>
+<b>willgurht@gmail.com</b>

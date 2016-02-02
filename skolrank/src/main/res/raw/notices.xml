@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<notices>
+    <notice>
+        <name>Kommunvapnen</name>
+        <url>https://sv.wikipedia.org/wiki/Kommunvapen_i_Sverige</url>
+        <copyright>Alla kommunvapnen är tolkningar hämtade från wikimedia. vanligtvis under CC 2.5
+            eller 3.0
+        </copyright>
+        <license>Creative Commons Attribution-NoDerivs 3.0 Unported</license>
+    </notice>
+    <notice>
+        <name>MPAndroidChart</name>
+        <url>https://github.com/PhilJay/MPAndroidChart</url>
+        <copyright>Philipp Jahoda
+        </copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+</notices>

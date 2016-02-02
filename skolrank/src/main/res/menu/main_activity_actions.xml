@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="9"
+        app:showAsAction="ifRoom"
+        android:title="@string/search_title"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
+    <item
+        android:id="@+id/action_sort_dialog"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_sort_schools" />
+    <item
+        android:id="@+id/action_school_type_dialog"
+        android:orderInCategory="11"
+        android:title="@string/action_school_type" />
+    <item
+        android:id="@+id/action_year_dialog"
+        android:orderInCategory="12"
+        android:title="@string/action_year_dialog" />
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="13"
+        android:title="@string/action_show_map" />
+    <item
+        android:id="@+id/action_list"
+        android:orderInCategory="14"
+        android:title="@string/action_show_list" />
+    <item
+        android:id="@+id/action_licenses"
+        android:orderInCategory="1000"
+        android:title="@string/action_licenses" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="1001"
+        android:title="@string/action_about" />
+</menu>

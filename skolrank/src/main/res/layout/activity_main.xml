@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar"
+        android:id="@+id/skolrank_toolbar"/>
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/skolrank_toolbar" />
+    <ListView
+        android:layout_below="@id/status_bar"
+        android:id="@+id/schoolList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"
+        tools:listitem="@layout/list_item_grund">
+
+    </ListView>
+    <include
+        layout="@layout/sort_order_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

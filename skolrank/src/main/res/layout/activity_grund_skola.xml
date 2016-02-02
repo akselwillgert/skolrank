@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="se.subsurface.skolrank.GrundSkolaActivity">
+    <include layout="@layout/toolbar"
+        android:id="@+id/skolrank_toolbar"/>
+    <ProgressBar
+        android:id="@+id/chart_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_below="@id/skolrank_toolbar"
+        android:id="@+id/chart_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/map_frame"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" >
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:background="@drawable/dummy_map"/>
+            </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_open_in_browser"
+                style="@style/blue_button_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue_button"
+                android:text="@string/open_in_browser" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/percentage_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/btn_open_in_browser" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_numStudents"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/percentage_chart" />
+        </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

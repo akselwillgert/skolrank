@@ -1,0 +1,14 @@
+*.apk
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+
+build
+/captures
+*.iml
+/.idea
+build_prod.properties
+/signing.properties
+/build_debug.properties

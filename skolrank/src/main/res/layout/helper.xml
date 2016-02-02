@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/map_helper_clusters" />
+
+        <TextView
+            style="@style/ClusterIcon.TextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="@string/map_helper_cluster_number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:text="@string/map_helper_detailed_markers" />
+
+        <LinearLayout
+            android:id="@+id/sample_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:background="@drawable/bubble_mask"
+
+            android:backgroundTint="@color/white"
+            android:src="@drawable/bubble_shadow">
+
+
+            <include layout="@layout/detailed_marker" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/marker_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/avg_grade"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                style="@style/marker_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/educated_parents"
+                android:textColor="@color/skolrank_blue" />
+
+            <TextView
+                style="@style/marker_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/foreign_parents"
+                android:textColor="@color/skolrank_red" />
+
+
+            <TextView
+                style="@style/marker_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/girls"
+                android:textColor="@color/skolrank_pink" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/helper_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_button"
+            android:text="@string/ok" />
+    </LinearLayout>
+</ScrollView>

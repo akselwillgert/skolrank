@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/program_namn"
+        style="@style/program_tv"
+        tools:text="Handels- och administrationsprogrammet" />
+
+    <TextView
+        android:id="@+id/avgGrade"
+        style="@style/program_tv"
+        tools:text="256" />
+
+
+    <TextView
+        android:id="@+id/qualifiedForHighSchool"
+        style="@style/program_tv"
+        tools:text="83%" />
+
+
+    <TextView
+        android:id="@+id/numStudents_grade_3"
+        style="@style/program_tv"
+        tools:text="1200" />
+</TableRow>

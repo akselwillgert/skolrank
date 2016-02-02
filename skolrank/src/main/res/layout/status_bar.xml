@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_dark_alpha"
+    tools:ignore="Overdraw">
+
+    <TextView
+        android:id="@+id/school_type"
+        style="@style/status_bar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        tools:text="Grundskolor" />
+
+    <TextView
+        android:id="@+id/filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        style="@style/status_bar_text"
+        tools:text="filtertext" />
+
+    <ProgressBar
+        android:id="@+id/listProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:padding="2dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/num_schools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#66000000"
+        style="@style/status_bar_text"
+        tools:text="217"
+
+        />
+</LinearLayout>

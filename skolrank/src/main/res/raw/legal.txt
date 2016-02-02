@@ -1,0 +1,1 @@
+Appen fungerar förhoppningsvis, men ev. buggar kan ha smugit sig in, om något känns felaktigt så maila mig. Datat är exporterat från siris.skolverket.se och om något värde är felaktigt så härstammar det troligtvis därifrån.

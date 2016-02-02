@@ -1,0 +1,76 @@
+<resources>
+
+    <style name="details_frame">
+        <item name="android:background">@android:drawable/picture_frame</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <color name="skolrank_red">@color/red_600</color>
+    <color name="skolrank_blue">@color/blue_600</color>
+    <color name="skolrank_green">@color/green_500</color>
+    <color name="skolrank_pink">@color/pink_600</color>
+    <color name="skolrank_yellow">@color/amber_600</color>
+
+    <style name="sort_option_highlight">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="table_text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical|end</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:textSize">@dimen/list_item_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#FFFFFF</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:ellipsize">none</item>
+    </style>
+
+    <style name="program_tv">
+
+        <item name="android:background">@drawable/cell_shape</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:textSize">@dimen/list_item_medium</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="blue_button_text">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="marker_text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:shadowColor">#FFFFFF</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="status_bar_text">
+        <item name="android:textColor">@color/primary_light</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+</resources>

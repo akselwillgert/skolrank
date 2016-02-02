@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    <RelativeLayout
+        android:id="@+id/list_image_frame"
+        style="@style/details_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/school_type_image"
+            android:layout_width="32dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_shield_fri_36" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/list_item_school_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/list_image_frame"
+        android:layout_toRightOf="@+id/list_image_frame"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="@dimen/list_item_large"
+        android:textStyle="bold"
+        tools:text="Title" />
+
+    <TableLayout
+        android:stretchColumns="*"
+        android:id="@+id/list_item_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_item_school_name"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@id/list_image_frame">
+
+        <TableRow android:layout_width="0dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/avgGrade"
+                style="@style/table_text"
+                android:textColor="@color/black"
+                tools:text="256p"
+                />
+
+            <TextView
+                android:id="@+id/qualifiedForHighSchool"
+                style="@style/table_text"
+                android:textColor="@color/skolrank_green"
+                tools:text="83%" />
+
+            <TextView
+                android:id="@+id/numStudents"
+                style="@style/table_text"
+                android:textColor="@color/skolrank_yellow"
+                tools:text="1200" />
+
+
+              <TextView
+                  android:id="@+id/andel_elever_med_utlandsk_bakgrund_ak_1_9"
+                  style="@style/table_text"
+                  android:textColor="@color/skolrank_red"
+                  tools:text="12%" />
+
+            <TextView
+                android:id="@+id/andel_elever_med_foraldrar_med_eftergymnasial_utb_ak_1_9"
+                style="@style/table_text"
+                android:textColor="@color/skolrank_blue"
+                tools:text="87%" />
+
+
+            <TextView
+                android:id="@+id/andel_flickor_arskurs_1_9"
+                style="@style/table_text"
+                android:textColor="@color/skolrank_pink"
+                tools:text="87%" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/grades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_lighter"
+        android:layout_toRightOf="@id/list_image_frame"
+        android:textSize="@dimen/list_item_small"
+        tools:text="0-9"
+        android:layout_alignBottom="@id/list_image_frame"
+        />
+    <TextView
+        android:id="@+id/kommun_namn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/list_image_frame"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/text_lighter"
+        android:textSize="@dimen/list_item_small"
+        tools:text="allingsås"
+        tools:ignore="RelativeOverlap" />
+</RelativeLayout>

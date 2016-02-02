@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*">
+
+    <TableRow>
+
+        <ImageView
+            android:layout_span="2"
+            android:gravity="center"
+            android:src="@drawable/ic_flower"
+            tools:ignore="ContentDescription"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_span="2"
+            android:gravity="center"
+            android:textColorLink="@color/blue_900" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/legal_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dip"
+            android:layout_span="2"
+            android:textColor="#cccccc"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            tools:ignore="SmallSp" />
+    </TableRow>
+</TableLayout>
