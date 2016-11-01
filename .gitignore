@@ -12,3 +12,4 @@ build
 build_prod.properties
 /signing.properties
 /build_debug.properties
+projectFilesBackup/

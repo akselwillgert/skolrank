@@ -1,7 +1,6 @@
 package se.subsurface.skolrank.dialogs;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -22,19 +21,19 @@ public class SchoolListSortDialog extends DialogFragment {
 
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
         sortOption = getArguments().getInt(SORT_OPTION, 0);
         // Verify that the host activity implements the callback interface
         try {
             Log.d(getClass().getName(), "onAttach");
             // Instantiate the NoticeDialogListener so we can send events to the host
-            mListener = (SortOptionDialogListener) activity;
+            mListener = (SortOptionDialogListener) context;
         } catch (ClassCastException e) {
             Log.e(getClass().getName(), e.getMessage());
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(activity.toString()
+            throw new ClassCastException(context.toString()
                     + " must implement " + SortOptionDialogListener.class.getName());
         }
     }

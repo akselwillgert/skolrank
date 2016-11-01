@@ -55,7 +55,7 @@ public class GrundSkolaActivity extends SkolaActivity {
         LineData percentageData = new LineData();
         LineData numStudentsData = new LineData();
 
-        for (int y = 2006; y < 2015; y++) {
+        for (int y = 2006; y <= 2015; y++) {
             percentageData.addXValue(y + "");
             numStudentsData.addXValue(y + "");
         }

@@ -49,6 +49,13 @@ public class MainActivity extends AbstractMainActivity implements LoaderManager.
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppController.getInstance().sendEvent(mTracker, mSortComparator, mSearchQuery);
+
+    }
+
     public Loader<Cursor> onCreateLoader(int loaderID, Bundle args) {
         switch (loaderID) {
             case 0:
@@ -129,7 +136,10 @@ public class MainActivity extends AbstractMainActivity implements LoaderManager.
                 cursor = AppController.getInstance().getGrundDatabase().getCity(GrundDatabase.getSortString(compareBy), filterString, year);
             } else {
                 cursor = AppController.getInstance().getGymnasieDatabase().getSkola(compareBy, filterString, year);
+                Log.e(TAG, "count=" + cursor.getCount());
             }
+
+
             return cursor;
         }
     }

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.Spanned;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.widget.TextView;
@@ -15,15 +16,15 @@ import java.io.InputStreamReader;
 
 class AboutDialog extends Dialog {
     private static final String TAG = "AboutDialog";
-    private static Context mContext = null;
+    private final Context mContext;
 
-    public AboutDialog(Context context) {
+    AboutDialog(Context context) {
         super(context);
         mContext = context;
 
     }
 
-    private static String readRawTextFile(int id) {
+    private String readRawTextFile(int id) {
         InputStream inputStream = mContext.getResources().openRawResource(id);
         InputStreamReader in = new InputStreamReader(inputStream);
         BufferedReader buf = new BufferedReader(in);
@@ -50,7 +51,16 @@ class AboutDialog extends Dialog {
 
         tv = (TextView) findViewById(R.id.info_text);
         tv.setMaxLines(10);
-        tv.setText(Html.fromHtml(readRawTextFile(R.raw.info)));
+
+        Spanned info;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            info = Html.fromHtml(readRawTextFile(R.raw.info), Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            //noinspection deprecation
+            info = Html.fromHtml(readRawTextFile(R.raw.info));
+        }
+
+        tv.setText(info);
 
         Linkify.addLinks(tv, Linkify.ALL);
     }

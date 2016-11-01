@@ -23,9 +23,9 @@ class BubbleDrawable extends Drawable {
 
     public BubbleDrawable(Resources res) {
         //noinspection deprecation
-        mMask = res.getDrawable(R.drawable.bubble_mask);
+        mMask = res.getDrawable(R.drawable.amu_bubble_mask);
         //noinspection deprecation
-        mShadow = res.getDrawable(R.drawable.bubble_shadow);
+        mShadow = res.getDrawable(R.drawable.amu_bubble_shadow);
     }
 
     @SuppressWarnings("unused")
@@ -34,7 +34,7 @@ class BubbleDrawable extends Drawable {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(@NonNull Canvas canvas) {
         mMask.draw(canvas);
         canvas.drawColor(mColor, PorterDuff.Mode.SRC_IN);
         mShadow.draw(canvas);
@@ -62,7 +62,7 @@ class BubbleDrawable extends Drawable {
     }
 
     @Override
-    public void setBounds(Rect bounds) {
+    public void setBounds(@NonNull Rect bounds) {
         mMask.setBounds(bounds);
         mShadow.setBounds(bounds);
     }

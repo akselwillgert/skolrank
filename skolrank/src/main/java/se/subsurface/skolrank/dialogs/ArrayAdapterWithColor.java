@@ -1,6 +1,7 @@
 package se.subsurface.skolrank.dialogs;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -15,8 +16,9 @@ class ArrayAdapterWithColor extends ArrayAdapter<String> {
         this.colors = colors;
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
         TextView textView = (TextView) view.findViewById(android.R.id.text1);
         textView.setTextColor(colors[position]);

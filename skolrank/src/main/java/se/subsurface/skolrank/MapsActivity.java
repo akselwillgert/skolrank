@@ -75,6 +75,13 @@ public class MapsActivity extends AbstractMainActivity implements OnMapReadyCall
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        AppController.getInstance().sendEvent(mTracker, mSortComparator, mSearchQuery);
+
+    }
+
+    @Override
     int getContentView() {
         return R.layout.activity_maps;
     }
@@ -139,11 +146,9 @@ public class MapsActivity extends AbstractMainActivity implements OnMapReadyCall
                 return false;
             }
         });
-        mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
-            public void onCameraChange(CameraPosition cameraPosition) {
-
-                Log.e(TAG, "cameraPosition" + cameraPosition.target);
+            public void onCameraIdle() {
                 Log.e(TAG, "onCameraChange() clickedCluster=" + clickedCluster + ", clickedMaker=" + clickedMarker);
                 if (clickedCluster == null && clickedMarker == null) {
                     if (!zoomToMarkers) {
@@ -163,7 +168,7 @@ public class MapsActivity extends AbstractMainActivity implements OnMapReadyCall
                 clickedMarker = null;
                 zoomToMarkers = false;
                 //MapsActivity.this.cameraPosition = cameraPosition;
-                mClusterManager.onCameraChange(cameraPosition);
+                mClusterManager.onCameraIdle();
             }
         });
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {

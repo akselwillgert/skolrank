@@ -27,10 +27,10 @@
         android:layout_alignTop="@+id/list_image_frame"
         android:layout_toRightOf="@+id/list_image_frame"
         android:ellipsize="end"
-        android:singleLine="true"
         android:textSize="@dimen/list_item_large"
         android:textStyle="bold"
-        tools:text="Title" />
+        tools:text="Title"
+        android:maxLines="1" />
 
     <TableLayout
         android:stretchColumns="*"

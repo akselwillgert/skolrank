@@ -20,6 +20,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ValueFormatter;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -287,6 +288,12 @@ abstract public class SkolaActivity extends AppCompatActivity implements OnMapRe
         setVisibileIfData(numStudentsChart);
         setupMap(skola);
         initButton(skola.name, skola.kommun);
+        final String[] items = getResources().getStringArray(R.array.school_type_options);
+
+        AppController.getInstance().getDefaultTracker().send(new HitBuilders.EventBuilder()
+                .setCategory(items[skola.schoolType])
+                .setAction(skola.name)
+                .build());
 
     }
 

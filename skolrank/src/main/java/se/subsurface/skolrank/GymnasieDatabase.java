@@ -24,7 +24,7 @@ import static se.subsurface.skolrank.model.Skola.COLUMN_ypos;
 
 public class GymnasieDatabase extends SQLiteAssetHelper {
     private static final String DATABASE_NAME = "gymnasie.db";
-    private static final int DATABASE_VERSION = 11;
+    private static final int DATABASE_VERSION = 13;
     private static final String TAG = "GymnasieDatabase";
 
     public GymnasieDatabase(Context context) {

@@ -16,7 +16,7 @@
             android:text="@string/map_helper_clusters" />
 
         <TextView
-            style="@style/ClusterIcon.TextAppearance"
+            style="@style/amu_ClusterIcon.TextAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -36,10 +36,10 @@
             android:layout_height="wrap_content"
 
             android:layout_gravity="center"
-            android:background="@drawable/bubble_mask"
+            android:background="@drawable/amu_bubble_mask"
 
             android:backgroundTint="@color/white"
-            android:src="@drawable/bubble_shadow">
+            android:src="@drawable/amu_bubble_shadow">
 
 
             <include layout="@layout/detailed_marker" />

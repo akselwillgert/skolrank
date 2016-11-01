@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="se.subsurface.skolrank">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -21,7 +23,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_api_key" />
-
+        <meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/analytics_global_config" />
         <activity
             android:name="se.subsurface.skolrank.MapsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import de.psdev.licensesdialog.LicensesDialogFragment;
 import se.subsurface.skolrank.dialogs.SchoolListSortDialog;
@@ -50,10 +54,16 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
     public void onYearDialogClick(int year) {
         Log.e(TAG, "year=" + year);
         this.year = year;
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("newYearOption")
+                .setAction(year + "")
+                .build());
         restartLoader();
     }
 
     abstract void restartLoader();
+
+    Tracker mTracker;
 
     @Override
     public void onDialogPositiveClick(int sortOptionInt) {
@@ -62,6 +72,10 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
 
         final String[] items = getResources().getStringArray(R.array.sort_options);
 
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("newSortOption")
+                .setAction(items[sortOptionInt])
+                .build());
 
         Toast.makeText(
                 this,
@@ -112,6 +126,9 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
 
+        AppController application = (AppController) getApplication();
+        mTracker = application.getDefaultTracker();
+
 //        Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar,null);
         Toolbar toolbar = (Toolbar) findViewById(R.id.skolrank_toolbar);
         setSupportActionBar(toolbar);
@@ -149,6 +166,11 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
     public void onDialogClick(int schoolType) {
         mPreferences.edit().putInt(SchoolTypeDialog.SCHOOL_TYPE, schoolType).apply();
         this.mSchoolType = schoolType;
+        final String[] items = getResources().getStringArray(R.array.school_type_options);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("newSchoolTypeOption")
+                .setAction(items[schoolType])
+                .build());
         restartLoader();
     }
 
@@ -215,7 +237,16 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         mSearchView = searchView;
         searchView.setMaxWidth(Integer.MAX_VALUE);
-        searchView.setQueryHint(Html.fromHtml("<font color = #CCCCCC>" + getResources().getString(R.string.search_hint) + "</font>"));
+        String hint = "<font color = #CCCCCC>" + getResources().getString(R.string.search_hint) + "</font>";
+
+        Spanned hintHtml;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            hintHtml = Html.fromHtml(hint, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            //noinspection deprecation
+            hintHtml = Html.fromHtml(hint);
+        }
+        searchView.setQueryHint(hintHtml);
 
         Log.v(TAG, "mSearchQuery=" + mSearchQuery);
         mSearchView.setOnSearchClickListener(new View.OnClickListener() {
@@ -244,6 +275,11 @@ public abstract class AbstractMainActivity extends AppCompatActivity implements 
                 mPreferences.edit().putString(SEARCH_QUERY, mSearchQuery).apply();
                 //           SchoolListFragment listFragment = (SchoolListFragment) getFragmentManager().findFragmentByTag(LIST_FRAGMENT);
                 //           listFragment.updateFilter(query);
+
+                mTracker.send(new HitBuilders.EventBuilder()
+                        .setCategory("newSearchStringSubmit")
+                        .setAction(query)
+                        .build());
                 return false;
             }
 

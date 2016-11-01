@@ -40,7 +40,7 @@ import static se.subsurface.skolrank.model.Skola.TABLE_SKOLA;
 public class GrundDatabase extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "school.db";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
     private static final String TAG = "GrundDatabase";
 
     public GrundDatabase(Context context) {
